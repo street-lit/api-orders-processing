@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   post   '/orders',           to: 'orders#create'
   put    '/orders/:id',       to: 'orders#update'
   delete '/orders/:id',       to: 'orders#destroy'
+  get    '/reports/purchases',to: 'reports#top_five_purchased_items'
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
