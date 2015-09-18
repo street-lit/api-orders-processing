@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# Use faker to populate database with fake data
 gem 'faker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
