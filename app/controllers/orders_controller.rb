@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
       order = Order.find(params[:id])
       render json: order.to_json, status: 200
     else
-      render json: { error_message: "The record id: #{params[:id]} wasn't found!"}.to_json, status: 404
+      render json: { error_message: "The record id: #{params[:id]} not found!"}.to_json, status: 404
     end
   end
 
@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
       order.save
       render json: order.to_json, status: 200
     else
-      render json: { error_message: "The record id: #{params[:id]} wasn't found!" }.to_json, status: 404
+      render json: { error_message: "The record id: #{params[:id]} not found!" }.to_json, status: 404
     end
   end
 
@@ -58,7 +58,7 @@ class OrdersController < ApplicationController
       order.destroy
       render json: { message: "Order with id: #{params[:id]} deleted successfully." }.to_json, status: 200
     else
-      render json: { error_message: "Order id: #{params[:id]} wasn't found!" }.to_json, status: 404
+      render json: { error_message: "Order id: #{params[:id]} not found!" }.to_json, status: 404
     end
   end
 end

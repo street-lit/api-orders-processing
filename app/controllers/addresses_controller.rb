@@ -15,7 +15,7 @@ class AddressesController < ApplicationController
       address = Address.find(params[:id])
       render json: address.to_json, status: 200
     else
-      render json: { error_message: "The record id: #{params[:id]} wasn't found!" }.to_json, status: 400
+      render json: { error_message: "The record id: #{params[:id]} not found!" }.to_json, status: 400
     end
   end
 
@@ -57,7 +57,7 @@ class AddressesController < ApplicationController
       address.save
       render json: address.to_json, status: 200
     else
-      render json: { error_message: "The record id: #{params[:id]} wasn't found!" }.to_json, status: 400
+      render json: { error_message: "The record id: #{params[:id]} not found!" }.to_json, status: 400
     end
   end
 
@@ -67,7 +67,7 @@ class AddressesController < ApplicationController
       address.destroy
       render json: { message: "Item with id: #{params[:id]} deleted successfully." }.to_json, status: 200
     else
-      render json: { error_message: "Address id: #{params[:id]} wasn't found!" }.to_json, status: 404
+      render json: { error_message: "Address id: #{params[:id]} not found!" }.to_json, status: 404
     end
   end
 end

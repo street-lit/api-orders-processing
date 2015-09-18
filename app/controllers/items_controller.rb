@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
       item = Item.find(params[:id])
       render json: item.to_json, status: 200
     else
-      render json: { error_message: "The record id: #{params[:id]} wasn't found!" }.to_json, status: 404
+      render json: { error_message: "The record id: #{params[:id]} not found!" }.to_json, status: 404
     end
   end
 
@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
       item.save
       render json: item.to_json, status: 200
     else
-      render json: { error_message: "The record id: #{params[:id]} wasn't found!" }.to_json, status: 404
+      render json: { error_message: "The record id: #{params[:id]} not found!" }.to_json, status: 404
     end
   end
 
@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
       item.destroy
       render json: { message: "Item with id: #{params[:id]} deleted successfully." }.to_json, status: 200
     else
-      render json: { error_message: "Item id: #{params[:id]} wasn't found!" }.to_json, status: 404
+      render json: { error_message: "Item id: #{params[:id]} not found!" }.to_json, status: 404
     end
   end
 end
