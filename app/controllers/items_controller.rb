@@ -61,6 +61,15 @@ class ItemsController < ApplicationController
       render json: { error_message: "Item id: #{params[:id]} not found!" }.to_json, status: 404
     end
   end
+
+  def find_users_by_item
+    users_by_item = Item.find(params[:id]).users
+    if users_by_item.nil? || users_by_item.empty?
+      render json: { error_message: "Item id: #{params[:id]} not ordered by any users!" }.to_json, status: 404
+    else
+      render json: users_by_item.to_json, status: 200
+    end
+  end
 end
 
 

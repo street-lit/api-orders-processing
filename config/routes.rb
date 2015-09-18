@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get    '/items',            to: 'items#index'
   get    '/items/new',        to: 'items#new'
   get    '/items/:id',        to: 'items#show'
+  get    '/items/:id/users',  to: 'items#find_users_by_item'
   post   '/items',            to: 'items#create'
   put    '/items/:id',        to: 'items#update'
   delete '/items/:id',        to: 'items#destroy'
