@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       error_message = "The 'last_name' field was empty or not found"
       render json: { error_message: error_message }.to_json, status: 422
     elsif params[:age].nil? || params[:age].empty?
-      error_message = "The 'last_name' field was empty or not found"
+      error_message = "The 'age' field was empty or not found"
       render json: { error_message: error_message }.to_json, status: 422
     else
       user = User.new
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       user.last_name = params[:last_name]
       user.age = params[:age]
       user.save
-      render json: user.to_json , status: 201
+      render json: user.to_json, status: 201
     end
   end
 
@@ -62,10 +62,6 @@ class UsersController < ApplicationController
     end
   end
 end
-
-
-
-
 
 
 
