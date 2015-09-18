@@ -58,7 +58,7 @@ class UsersController < ApplicationController
       user.destroy
       render json: { message: "User with id: #{params[:id]} deleted successfully." }.to_json, status: 200
     else
-      render json: { error_message: "The record id: #{params[:id]} wasn't found!" }.to_json, status: 404
+      render json: { error_message: "User id: #{params[:id]} wasn't found!" }.to_json, status: 404
     end
   end
 end

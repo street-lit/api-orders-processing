@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   post   '/items',         to: 'items#create'
   put    '/items/:id',     to: 'items#update'
   delete '/items/:id',     to: 'items#destroy'
+  get    '/addresses',     to: 'addresses#index'
+  get    '/addresses/new', to: 'addresses#new'
+  get    '/addresses/:id', to: 'addresses#show'
+  post   '/addresses',     to: 'addresses#create'
+  put    '/addresses/:id', to: 'addresses#update'
+  delete '/addresses/:id', to: 'addresses#destroy'
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

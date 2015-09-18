@@ -56,9 +56,9 @@ class ItemsController < ApplicationController
     if Item.exists?(params[:id])
       item = Item.find(params[:id])
       item.destroy
-      render json: { message: "User with id: #{params[:id]} deleted successfully." }.to_json, status: 200
+      render json: { message: "Item with id: #{params[:id]} deleted successfully." }.to_json, status: 200
     else
-      render json: { error_message: "The record id: #{params[:id]} wasn't found!" }.to_json, status: 404
+      render json: { error_message: "Item id: #{params[:id]} wasn't found!" }.to_json, status: 404
     end
   end
 end
