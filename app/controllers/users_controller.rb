@@ -70,6 +70,15 @@ class UsersController < ApplicationController
       render json: items_by_user.to_json, status: 200
     end
   end
+
+  def total_purchases_by_user
+    total_purchases = Order.joins(:item).order('user_id asc').where(user_id: params[:id]).sum("price * quantity")
+    if total_purchases.nil?
+      render json: { error_message: "Unable to find total purchases." }.to_json, status: 404
+    else
+      render json: { total_purchases: "#{total_purchases} for user id: #{params[:id]}" }.to_json, status: 200
+    end
+  end
 end
 
 

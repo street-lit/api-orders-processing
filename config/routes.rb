@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get    '/users/new',              to: 'users#new'
   get    '/users/:id',              to: 'users#show'
   get    '/users/:id/items',        to: 'users#find_items_by_user'
-  get    '/users/:id/purchases/total' to: 'users#total_purchases_by_user'
+  get    '/users/:id/purchases/total', to: 'users#total_purchases_by_user'
   post   '/users',                  to: 'users#create'
   put    '/users/:id',              to: 'users#update'
   delete '/users/:id',              to: 'users#destroy'
