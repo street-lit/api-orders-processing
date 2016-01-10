@@ -1,34 +1,35 @@
 Rails.application.routes.draw do
-  get    '/users',                  to: 'users#index'
-  get    '/users/new',              to: 'users#new'
-  get    '/users/:id',              to: 'users#show'
-  get    '/users/:id/items',        to: 'users#find_items_by_user'
+  resources :comments
+  get    '/users',                     to: 'users#index'
+  get    '/users/new',                 to: 'users#new'
+  get    '/users/:id',                 to: 'users#show'
+  get    '/users/:id/items',           to: 'users#find_items_by_user'
   get    '/users/:id/purchases/total', to: 'users#total_purchases_by_user'
-  post   '/users',                  to: 'users#create'
-  put    '/users/:id',              to: 'users#update'
-  delete '/users/:id',              to: 'users#destroy'
-  get    '/items',                  to: 'items#index'
-  get    '/items/new',              to: 'items#new'
-  get    '/items/:id',              to: 'items#show'
-  get    '/items/:id/users',        to: 'items#find_users_by_item'
-  post   '/items',                  to: 'items#create'
-  put    '/items/:id',              to: 'items#update'
-  delete '/items/:id',              to: 'items#destroy'
-  get    '/addresses',              to: 'addresses#index'
-  get    '/addresses/new',          to: 'addresses#new'
-  get    '/addresses/:id',          to: 'addresses#show'
-  post   '/addresses',              to: 'addresses#create'
-  put    '/addresses/:id',          to: 'addresses#update'
-  delete '/addresses/:id',          to: 'addresses#destroy'
-  get    '/orders',                 to: 'orders#index'
-  get    '/orders/new',             to: 'orders#new'
-  get    '/orders/:id',             to: 'orders#show'
-  post   '/orders',                 to: 'orders#create'
-  put    '/orders/:id',             to: 'orders#update'
-  delete '/orders/:id',             to: 'orders#destroy'
-  get    '/reports/purchases',      to: 'reports#top_five_purchased_items'
-  get    '/reports/purchases/total',to: 'reports#total_purchases'
-  root 'users#index'
+  post   '/users',                     to: 'users#create'
+  put    '/users/:id',                 to: 'users#update'
+  delete '/users/:id',                 to: 'users#destroy'
+  get    '/items',                     to: 'items#index'
+  get    '/items/new',                 to: 'items#new'
+  get    '/items/:id',                 to: 'items#show'
+  get    '/items/:id/users',           to: 'items#find_users_by_item'
+  post   '/items',                     to: 'items#create'
+  put    '/items/:id',                 to: 'items#update'
+  delete '/items/:id',                 to: 'items#destroy'
+  get    '/addresses',                 to: 'addresses#index'
+  get    '/addresses/new',             to: 'addresses#new'
+  get    '/addresses/:id',             to: 'addresses#show'
+  post   '/addresses',                 to: 'addresses#create'
+  put    '/addresses/:id',             to: 'addresses#update'
+  delete '/addresses/:id',             to: 'addresses#destroy'
+  get    '/orders',                    to: 'orders#index'
+  get    '/orders/new',                to: 'orders#new'
+  get    '/orders/:id',                to: 'orders#show'
+  post   '/orders',                    to: 'orders#create'
+  put    '/orders/:id',                to: 'orders#update'
+  delete '/orders/:id',                to: 'orders#destroy'
+  get    '/reports/purchases',         to: 'reports#top_five_purchased_items'
+  get    '/reports/purchases/total',   to: 'reports#total_purchases'
+  root   'users#index'
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -65,8 +66,7 @@ end
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
-  #     resources :comments
-  #     resources :sales do
+  #     #     resources :sales do
   #       get 'recent', on: :collection
   #     end
   #   end
